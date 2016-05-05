@@ -6,7 +6,8 @@ WORKDIR /tmp
 RUN curl -s https://api.github.com/repos/jgm/pandoc/releases/latest | grep "browser_download_url.*deb" | cut -d : -f 2,3 | tr -d \" |  wget -O pandoc.deb -qi -
 RUN dpkg -i ./pandoc.deb
 RUN apt-get -f install
-RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 WORKDIR $HOME
+RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 ENTRYPOINT zsh
