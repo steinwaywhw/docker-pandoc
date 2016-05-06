@@ -8,6 +8,6 @@ RUN dpkg -i ./pandoc.deb
 RUN apt-get -f install
 
 WORKDIR $HOME
-RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" || true
 
 ENTRYPOINT zsh
