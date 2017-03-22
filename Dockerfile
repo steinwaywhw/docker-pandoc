@@ -11,7 +11,6 @@ RUN apt-get -f install
 
 WORKDIR /tmp
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" || true
-RUN apt-get install -y pandoc-citeproc
 RUN echo "alias python=python3" >> ~/.zshrc
 
 WORKDIR /tmp/src
