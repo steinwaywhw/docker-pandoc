@@ -1,6 +1,7 @@
 FROM steinwaywhw/docker-texlive
 
 RUN apt-get update
+RUN apt-get upgrade -y
 RUN apt-get install -y curl wget make gnuplot graphviz zsh git imagemagick python3 python3-pip pdf2svg
 RUN pip3 install --upgrade pip pandocfilters git+git://github.com/sergiocorreia/panflute.git
 WORKDIR /tmp
